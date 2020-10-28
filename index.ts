@@ -13,7 +13,6 @@ import { initDb } from "./src/app/db";
 import { initProd } from "./src/app/prod";
 import { routers } from "./src/app/routes";
 import { logger } from "./src/app/logging";
-import { config } from "./src/config";
 const app = express();
 
 initDb();
