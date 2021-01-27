@@ -1,0 +1,48 @@
+@import "../include.scss";
+.blog {
+        &__card {
+                position: absolute;
+                bottom: 0;
+                z-index: 10;
+                padding: 64px;
+                max-width: 520px;
+                min-width: 400px;
+                background-color: #ffffff;
+                transform: translateY(50%);
+
+                color: #685166;
+                & > *:not(:last-child) {
+                        margin-bottom: 24px;
+                }
+                @include BreakPoint(xl) {
+                        padding: 24px 16px;
+                }
+                @include BreakPoint(lg) {
+                        transform: translateY(0);
+                        bottom: 10%;
+                }
+                @include BreakPoint(md) {
+                        margin: 0 16px 0 8px;
+                        display: none;
+                        min-width: auto;
+                }
+        }
+        &__title {
+                font-size: 24px;
+                letter-spacing: 1px;
+        }
+        &__content {
+                font-weight: 500;
+                font-size: 13px;
+        }
+        &__link {
+                font-size: 18px;
+                color: #e8585c;
+                font-weight: bold;
+                transition: 0.2s ease-out;
+
+                &:hover {
+                        color: #163f53;
+                }
+        }
+}

@@ -19,8 +19,9 @@ initDb();
 initProd(app);
 routers(app);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
         logger.info(`Current mode: ${process.env.NODE_ENV}`);
         logger.info(`Listening on port ${port}`);
+        logger.info("database: " + process.env.DB_URL);
 });

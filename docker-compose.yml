@@ -1,0 +1,23 @@
+version: "3"
+services:
+        server:
+                build: ./
+                image: heaty566/merci:latest
+                expose:
+                        - 3000
+                env_file:
+                        - ./data/config/server.env
+        certbot:
+                image: certbot/certbot
+                volumes:
+                        - ./data/certbot/conf:/etc/letsencrypt
+                        - ./data/certbot/www:/var/www/certbot
+        nginx:
+                image: nginx:alpine
+                ports:
+                        - 80:80
+                        - 443:443
+                volumes:
+                        - ./data/certbot/conf:/etc/letsencrypt
+                        - ./data/certbot/www:/var/www/certbot
+                        - ./data/nginx:/etc/nginx/conf.d

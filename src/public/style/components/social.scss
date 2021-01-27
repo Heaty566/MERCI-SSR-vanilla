@@ -1,0 +1,14 @@
+.social {
+        &__container {
+                position: absolute;
+                right: 32px;
+                bottom: 16px;
+        }
+        &__item {
+                display: block;
+
+                &:not(:last-child) {
+                        margin-bottom: 16px;
+                }
+        }
+}

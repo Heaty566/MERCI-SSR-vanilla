@@ -4,7 +4,9 @@ import bodyParser from "body-parser";
 import mongodbSession from "connect-mongodb-session";
 import session from "express-session";
 import { config } from "../config";
+import indexRouter from "../controller/index";
 import morgan from "morgan";
+
 const MongoDbStore = mongodbSession(session);
 const sessionStore = new MongoDbStore({
         uri: config.DB_URL,
@@ -17,8 +19,10 @@ export const routers = (app: Express) => {
         app.use(cors({ origin: config.CLIENT_URL, credentials: true }));
         app.use(morgan("dev"));
         app.use(bodyParser.json());
+        app.set("view engine", "ejs");
+        app.set("views", process.cwd() + "/src/views");
+        app.use(express.static(process.cwd() + "/src/public"));
         app.use(bodyParser.urlencoded({ extended: true }));
-        app.use(express.static(process.cwd() + "/public"));
         //main routers
         app.use(
                 session({
@@ -33,7 +37,5 @@ export const routers = (app: Express) => {
                 })
         );
 
-        app.get("/*", (req, res) => {
-                res.sendFile(process.cwd() + "/public/index.html");
-        });
+        app.use(indexRouter);
 };
