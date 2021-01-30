@@ -3,10 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 dotenv.config({
-        path: path.resolve(
-                __dirname,
-                `./src/config/.env.${process.env.NODE_ENV}`
-        ),
+        path: path.resolve(__dirname, `./src/config/.env.${process.env.NODE_ENV}`),
 });
 
 import { initDb } from "./src/app/db";
@@ -18,6 +15,7 @@ const app = express();
 initDb();
 initProd(app);
 routers(app);
+import "./src/service/passport.service";
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

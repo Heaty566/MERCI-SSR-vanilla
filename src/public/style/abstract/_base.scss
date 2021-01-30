@@ -1,0 +1,76 @@
+@import "../include";
+
+*,
+*::after,
+*::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+a {
+        text-decoration: none;
+}
+
+@font-face {
+        font-family: "SF Pro";
+        font-style: normal;
+        font-weight: 400;
+        src: url("../../asset/fonts/SF-Pro-Display-Regular.otf");
+}
+
+@font-face {
+        font-family: "SF Pro";
+        font-style: normal;
+        font-weight: 500;
+        src: url("../../asset/fonts/SF-Pro-Display-Medium.otf");
+}
+@font-face {
+        font-family: "SF Pro";
+        font-style: normal;
+        font-weight: 600;
+        src: url("../../asset/fonts/SF-Pro-Display-Semibold.otf");
+}
+
+@font-face {
+        font-family: "SF Pro";
+        font-style: normal;
+        font-weight: 300;
+        src: url("../../asset/fonts/SF-Pro-Display-Thin.otf");
+}
+@font-face {
+        font-family: "SF Pro";
+        font-style: normal;
+        font-weight: 700;
+        src: url("../../asset/fonts/SF-Pro-Display-Bold.otf");
+}
+
+html {
+        font-family: "SF Pro";
+}
+
+body {
+        min-height: 100vh;
+        position: relative;
+        background-color: #faf3f3;
+}
+
+ul {
+        list-style: none;
+}
+
+li,
+a {
+        display: block;
+        text-decoration: none;
+}
+
+.container {
+        &__main {
+                padding-top: 64px;
+                min-height: inherit;
+                @include BreakPoint(md) {
+                        padding-top: 48px;
+                }
+        }
+}

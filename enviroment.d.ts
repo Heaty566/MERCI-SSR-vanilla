@@ -1,3 +1,4 @@
+import { User as UserExtend } from "./src/models/user";
 declare global {
         namespace NodeJS {
                 interface ProcessEnv {
@@ -6,6 +7,9 @@ declare global {
                         DB_URL: string;
                         CLIENT_URL: string | string[];
                 }
+        }
+        namespace Express {
+                interface User extends UserExtend {}
         }
 }
 

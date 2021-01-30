@@ -1,0 +1,16 @@
+.notfound {
+        &__title {
+                font-size: 144px;
+        }
+
+        &__subtitle {
+                font-size: 64px;
+                font-weight: 400;
+        }
+
+        &__container {
+                text-align: center;
+                background-color: transparent !important;
+                border: unset !important;
+        }
+}

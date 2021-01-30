@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <%- include("./include/head") %>
+                <link rel="stylesheet" type="text/css" href="/style/contact.css" />
+        </head>
+        <body>
+                <%- include("./include/navbar") %>
+                <main class="form__layout container__main" id="layout">
+                        <form action="" class="form__wrapper">
+                                <h1 class="form__title">MERCI</h1>
+                                <p class="form__title--sub">
+                                        CONTACT FORM <br />
+                                        LET WE KNOW YOUR ISSUES
+                                </p>
+                                <div class="form__group">
+                                        <input class="form__input" name="name" type="text" placeholder="Full name" />
+                                        <p class="form__error"></p>
+                                </div>
+                                <div class="form__group">
+                                        <input class="form__input" name="email" type="text" placeholder="Email" />
+                                        <p class="form__error"></p>
+                                </div>
+                                <div class="form__group">
+                                        <textarea class="form__textarea" placeholder="Comment"></textarea>
+                                </div>
+                                <button class="btn">Submit</button>
+                        </form>
+                </main>
+                <script src="/script/navbar.js"></script>
+        </body>
+</html>

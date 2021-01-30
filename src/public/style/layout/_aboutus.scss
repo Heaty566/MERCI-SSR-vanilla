@@ -1,0 +1,42 @@
+@import "../include";
+.container__main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.about-us {
+        &__wrapper {
+                max-width: 50%;
+
+                & > *:not(:last-child) {
+                        margin-bottom: 32px;
+                }
+                & > * {
+                        margin: 0 auto;
+                }
+
+                @include BreakPoint(md) {
+                        max-width: 100%;
+                        padding: 16px;
+                }
+        }
+        &__title {
+                font-size: 96px;
+                text-align: center;
+                color: #163f53;
+                letter-spacing: 3px;
+                font-family: "Times New Roman", Times, serif;
+        }
+
+        &__img {
+                display: block;
+
+                position: relative;
+                max-width: 550px;
+                & img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                }
+        }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <%- include("./include/head") %>
+                <link rel="stylesheet" type="text/css" href="/style/store.css" />
+                <style>
+                        #sort {
+                                appearance: none;
+
+                                background-color: transparent;
+                                border: none;
+                                padding: 0 1em 0 0;
+                                margin: 0;
+                                width: 100%;
+                                font-family: inherit;
+                                font-size: inherit;
+                                cursor: inherit;
+                                line-height: inherit;
+                                width: 100%;
+                                min-width: 15ch;
+                                max-width: 30ch;
+                                border: 1px solid var(--select-border);
+                                border-radius: 0.25em;
+                                padding: 0.25em 0.5em;
+                                font-size: 1.25rem;
+                                cursor: pointer;
+                                line-height: 1.1;
+                                background-color: #fff;
+                                background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+                        }
+                        #sort::after {
+                                content: "";
+                                width: 0.8em;
+                                height: 0.5em;
+                                background-color: var(--select-arrow);
+                                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+                        }
+                        #sort::-ms-expand {
+                                display: none;
+                        }
+                </style>
+        </head>
+        <body>
+                <%- include("./include/navbar") %>
+
+                <main class="container__main" id="layout">
+                        <div class="jumbotron">
+                                <img src="/asset/images/jumbotron.png" alt="jumbotron" />
+                        </div>
+                        <div>
+                                <select id="sort">
+                                        <option selected>Sort</option>
+                                        <option value="price=1">Price (low -> high)</option>
+                                        <option value="price=-1">Price (high -> low)</option>
+                                </select>
+                        </div>
+                        <div class="store__container">
+                                <% if (!data.length) {%>
+
+                                <h1>Item is not found</h1>
+                                <% } %> <% for(var i=0; i<(data.length); i++) {%>
+
+                                <a class="item__wrapper" href="#">
+                                        <div class="item--top">
+                                                <img src="/asset/images/heart.svg" alt="love" />
+                                        </div>
+                                        <img class="item__img" src="<%= data[i].imageUrl  %> " alt="<%= data[i].name  %> " />
+                                        <h2 class="item__name"><%= data[i].name %></h2>
+                                        <p class="item__price">$ <%= String( data[i].price) %></p>
+                                </a>
+                                <% } %>
+                        </div>
+                </main>
+
+                <script src="/script/navbar.js"></script>
+        </body>
+</html>

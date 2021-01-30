@@ -1,0 +1,27 @@
+@import "../include";
+.form {
+        &__layout {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include BreakPoint(md) {
+                        align-items: stretch;
+                }
+        }
+
+        &__wrapper {
+                padding: 64px 24px;
+                text-align: center;
+                width: 400px;
+                background-color: #ffffff;
+                border: 1px solid #000000;
+
+                & > *:not(:last-child) {
+                        margin-bottom: 24px;
+                }
+
+                @include BreakPoint(md) {
+                        width: 100%;
+                }
+        }
+}
