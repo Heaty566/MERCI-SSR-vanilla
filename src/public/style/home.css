@@ -116,7 +116,7 @@ a {
 
 @media only screen and (max-width: 768px) {
         .navbar__brand {
-                font-size: 24px;
+                font-size: 32px;
         }
 }
 
@@ -252,12 +252,12 @@ a {
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
-        background-image: url("../../asset/images/extra.png");
+        background-image: url("../../asset/images/extra.jpg");
 }
 
 @media only screen and (max-width: 1600px) {
         .home__main--top {
-                background-image: url("../../asset/images/banner.png");
+                background-image: url("../../asset/images/banner.jpg");
         }
 }
 
@@ -269,7 +269,7 @@ a {
         -ms-grid-column-span: 1;
         grid-column: 1/2;
         background-size: cover;
-        background-image: url("../../asset/images/banner-2.png");
+        background-image: url("../../asset/images/banner-2.jpg");
 }
 
 .home__side {
@@ -280,13 +280,13 @@ a {
         -ms-grid-column: 2;
         -ms-grid-column-span: 1;
         grid-column: 2/3;
-        background-image: url("../../asset/images/banner.png");
+        background-image: url("../../asset/images/banner.jpg");
         position: relative;
 }
 
 @media only screen and (max-width: 1600px) {
         .home__side {
-                background-image: url("../../asset/images/extra.png");
+                background-image: url("../../asset/images/extra.jpg");
                 background-position: center center;
         }
 }

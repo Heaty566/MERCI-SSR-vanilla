@@ -19,9 +19,9 @@
                         background-size: cover;
                         background-repeat: no-repeat;
                         position: relative;
-                        background-image: url("../../asset/images/extra.png");
+                        background-image: url("../../asset/images/extra.jpg");
                         @include BreakPoint(xxl) {
-                                background-image: url("../../asset/images/banner.png");
+                                background-image: url("../../asset/images/banner.jpg");
                         }
                 }
 
@@ -30,7 +30,7 @@
                         grid-column: 1/2;
                         background-size: cover;
 
-                        background-image: url("../../asset/images/banner-2.png");
+                        background-image: url("../../asset/images/banner-2.jpg");
                 }
         }
 
@@ -38,9 +38,9 @@
                 grid-row: 1/3;
                 background-size: cover;
                 grid-column: 2/3;
-                background-image: url("../../asset/images/banner.png");
+                background-image: url("../../asset/images/banner.jpg");
                 @include BreakPoint(xxl) {
-                        background-image: url("../../asset/images/extra.png");
+                        background-image: url("../../asset/images/extra.jpg");
                         background-position: center center;
                 }
 

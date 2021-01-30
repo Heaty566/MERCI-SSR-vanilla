@@ -116,7 +116,7 @@ a {
 
 @media only screen and (max-width: 768px) {
         .navbar__brand {
-                font-size: 24px;
+                font-size: 32px;
         }
 }
 
@@ -239,6 +239,12 @@ a {
         height: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+        .jumbotron {
+                height: 250px;
+        }
+}
+
 .store__container {
         display: -ms-grid;
         display: grid;
@@ -277,6 +283,53 @@ a {
         }
 }
 
+.store__notfound {
+        border-top: 1px solid #171717;
+        font-size: 32px;
+        font-weight: 500;
+        display: block;
+        padding-top: 32px;
+        text-align: center;
+}
+
+.store__filter {
+        margin: 4px 8px;
+}
+
+@media only screen and (max-width: 768px) {
+        .store__filter {
+                margin: 4px;
+        }
+}
+
+.store__filter__box {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-family: inherit;
+        margin-bottom: 8px;
+        padding: 8px 8px;
+        font-size: 14px;
+        outline: none;
+        cursor: pointer;
+        font-weight: 500;
+        color: #163f53;
+        background: #faf3f3;
+        position: relative;
+        border: 1px solid #171717;
+}
+
+.store__filter__box__selector {
+        background: url("/asset/images/dropdown.svg"), #faf3f3;
+        background-repeat: no-repeat;
+        background-position: 90% center;
+        padding-right: 24px;
+}
+
+.store__filter__box__selector::-ms-expand {
+        display: none;
+}
+
 .item__wrapper {
         color: #000;
         padding: 16px;
@@ -309,8 +362,8 @@ a {
 
 .item__wrapper:hover {
         border: 1px solid #000;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
 }
 
 .item__img {

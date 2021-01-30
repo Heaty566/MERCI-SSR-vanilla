@@ -3,62 +3,30 @@
         <head>
                 <%- include("./include/head") %>
                 <link rel="stylesheet" type="text/css" href="/style/store.css" />
-                <style>
-                        #sort {
-                                appearance: none;
-
-                                background-color: transparent;
-                                border: none;
-                                padding: 0 1em 0 0;
-                                margin: 0;
-                                width: 100%;
-                                font-family: inherit;
-                                font-size: inherit;
-                                cursor: inherit;
-                                line-height: inherit;
-                                width: 100%;
-                                min-width: 15ch;
-                                max-width: 30ch;
-                                border: 1px solid var(--select-border);
-                                border-radius: 0.25em;
-                                padding: 0.25em 0.5em;
-                                font-size: 1.25rem;
-                                cursor: pointer;
-                                line-height: 1.1;
-                                background-color: #fff;
-                                background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-                        }
-                        #sort::after {
-                                content: "";
-                                width: 0.8em;
-                                height: 0.5em;
-                                background-color: var(--select-arrow);
-                                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-                        }
-                        #sort::-ms-expand {
-                                display: none;
-                        }
-                </style>
         </head>
         <body>
                 <%- include("./include/navbar") %>
 
                 <main class="container__main" id="layout">
                         <div class="jumbotron">
-                                <img src="/asset/images/jumbotron.png" alt="jumbotron" />
+                                <img src="/asset/images/jumbotron.jpg" alt="jumbotron" />
                         </div>
-                        <div>
-                                <select id="sort">
-                                        <option selected>Sort</option>
-                                        <option value="price=1">Price (low -> high)</option>
-                                        <option value="price=-1">Price (high -> low)</option>
+                        <form class="store__filter" id="filter">
+                                <input class="store__filter__box" placeholder="Item name" id="search" />
+                                <select class="store__filter__box store__filter__box__selector" id="sort">
+                                        <option selected>Sort By</option>
+                                        <option value="sortBy=price&sortOrder=1">Price (low -> high)</option>
+                                        <option value="sortBy=price&sortOrder=-1">Price (high -> low)</option>
+                                        <option value="sortBy=name&sortOrder=1">Name (A -> Z)</option>
+                                        <option value="sortBy=name&sortOrder=-1">Name (Z -> A)</option>
                                 </select>
-                        </div>
-                        <div class="store__container">
-                                <% if (!data.length) {%>
-
-                                <h1>Item is not found</h1>
-                                <% } %> <% for(var i=0; i<(data.length); i++) {%>
+                                <button class="store__filter__box" type="submit">Search</button>
+                        </form>
+                        <% if (!data.length) {%>
+                        <p class="store__notfound">Item Is Not Found</p>
+                        <% } %>
+                        <div class="store__container" id="store">
+                                <% for(var i=0; i<(data.length); i++) {%>
 
                                 <a class="item__wrapper" href="#">
                                         <div class="item--top">
@@ -71,7 +39,12 @@
                                 <% } %>
                         </div>
                 </main>
-
+                <% if (env==="production") { %>
+                <script src="/script/env.prod.js"></script>
+                <% } else { %>
+                <script src="/script/env.dev.js"></script>
+                <% } %>
                 <script src="/script/navbar.js"></script>
+                <script src="/script/store.js"></script>
         </body>
 </html>
