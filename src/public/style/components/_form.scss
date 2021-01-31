@@ -48,7 +48,10 @@
                 display: block;
                 resize: none;
                 overflow: auto;
+                text-indent: 12px;
                 min-height: 300px;
-                font-size: 16px;
+                font-weight: 400;
+                font-size: 14px;
+                font-family: inherit;
         }
 }

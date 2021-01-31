@@ -7,26 +7,30 @@
         <body>
                 <%- include("./include/navbar") %>
                 <main class="form__layout container__main" id="layout">
-                        <form action="" class="form__wrapper">
+                        <form action="" class="form__wrapper" id="contact-form">
                                 <h1 class="form__title">MERCI</h1>
                                 <p class="form__title--sub">
                                         CONTACT FORM <br />
                                         LET WE KNOW YOUR ISSUES
                                 </p>
+                                <p class="form__success" id="msg"></p>
                                 <div class="form__group">
-                                        <input class="form__input" name="name" type="text" placeholder="Full name" />
-                                        <p class="form__error"></p>
+                                        <input class="form__input" name="name" type="text" placeholder="Full name" id="name" />
+                                        <p class="form__error" id="name:error"></p>
                                 </div>
                                 <div class="form__group">
-                                        <input class="form__input" name="email" type="text" placeholder="Email" />
-                                        <p class="form__error"></p>
+                                        <input class="form__input" name="email" type="text" placeholder="Email" id="email" />
+                                        <p class="form__error" id="email:error"></p>
                                 </div>
                                 <div class="form__group">
-                                        <textarea class="form__textarea" placeholder="Comment"></textarea>
+                                        <p class="form__error" id="comment:error"></p>
+                                        <textarea class="form__textarea" placeholder="Comment" id="comment"></textarea>
                                 </div>
                                 <button class="btn">Submit</button>
                         </form>
                 </main>
+                <%- include("./include/script") %>
                 <script src="/script/navbar.js"></script>
+                <script src="/script/contactus.js"></script>
         </body>
 </html>

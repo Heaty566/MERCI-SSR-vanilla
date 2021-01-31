@@ -24,4 +24,24 @@
                         width: 100%;
                 }
         }
+        &__error {
+                color: red;
+                text-align: left;
+                font-size: 14px;
+                margin-top: 4px;
+
+                &::first-letter {
+                        text-transform: capitalize;
+                }
+        }
+        &__success {
+                color: #2ecc71;
+                text-align: left;
+                font-size: 14px;
+                margin-top: 4px;
+
+                &::first-letter {
+                        text-transform: capitalize;
+                }
+        }
 }

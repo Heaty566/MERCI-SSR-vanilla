@@ -9,7 +9,6 @@ dotenv.config({
 import { initDb } from "./src/app/db";
 import { initProd } from "./src/app/prod";
 import { routers } from "./src/app/routes";
-import { logger } from "./src/app/logging";
 const app = express();
 
 initDb();
@@ -19,7 +18,7 @@ import "./src/service/passport.service";
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-        logger.info(`Current mode: ${process.env.NODE_ENV}`);
-        logger.info(`Listening on port ${port}`);
-        logger.info("database: " + process.env.DB_URL);
+        console.log(`-------------------------------------- Current mode: ${process.env.NODE_ENV}`);
+        console.log(`-------------------------------------- Listening on port ${port}`);
+        console.log("-------------------------------------- database: " + process.env.DB_URL);
 });

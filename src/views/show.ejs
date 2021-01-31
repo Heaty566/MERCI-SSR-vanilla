@@ -2,25 +2,57 @@
 <html lang="en">
         <head>
                 <%- include("./include/head") %>
-                <link rel="stylesheet" type="text/css" href="/style/login.css" />
+                <link rel="stylesheet" type="text/css" href="/style/show.css" />
         </head>
         <body>
                 <%- include("./include/navbar") %>
                 <main class="form__layout container__main" id="layout">
-                        <form action="" class="form__wrapper">
-                                <h1 class="form__title">MERCI</h1>
-                                <p class="form__title--sub">LOGIN ACCOUNT WITH</p>
-                                <a href="#" class="form__link__wrapper">
-                                        <img class="form__link__img" src="/asset/images/google.svg" alt="google" />
-                                        <p class="form__link__label">CONTINUE WITH GOOGLE</p>
-                                </a>
-                                <div class="form__support">
-                                        <p>If you have any issues. Let us know to support.</p>
-                                        <a href="tel:090-0123-493">Phone: +090124562</a>
-                                        <a href="/conttact">Email: home@merci.com</a>
+                        <div class="show__wrapper">
+                                <div class="show__photo">
+                                        <img src="<%= item.imageUrl %> " alt="<%= item.name  %> " />
                                 </div>
-                        </form>
+
+                                <div class="show__info">
+                                        <h1 class="show__title"><%= item.name %></h1>
+                                        <h2 class="show__price">$ <%= item.price %></h2>
+                                        <div class="show__selector">
+                                                <select class="show__filter show__filter__selector">
+                                                        <% for(let i=0; i < item.size.length; i++) { %>
+                                                        <option <%= i===0 ? "selected" :null %>>Size - <%= item.size[i] %> US</option>
+
+                                                        <% } %>
+                                                </select>
+                                                <select class="show__filter show__filter__selector" id="colorInput">
+                                                        <% for(let i=0; i < item.color.length; i++) { %>
+                
+                                                        <option value=<%= item.color[i] %> >Color - <%= item.color[i]  %> </option>
+                                                        <% } %> 
+                                                </select>
+                                        </div>
+                                        <button class="btn">Add To Bag</button>
+                                </div>
+                                <div class="show__photo">
+                                        <img src="<%= item.imageUrl %> " alt="<%= item.name  %> " />
+                                </div>
+                        </div>
+                        <div  class="show__recommend">
+                                <h1>Recommend For You</h1>
+                        </div>
+                         <div class="store__container" id="store">
+                    
+                                <% for(var i=0; i<(recommend.length); i++) {%>
+                                <a class="item__wrapper" href="<%=url+"/show/"+recommend[i]._id  %> ">
+                                        <div class="item--top">
+                                                <img src="/asset/images/heart.svg" alt="love" />
+                                        </div>
+                                        <img class="item__img" src="<%= recommend[i].imageUrl  %> " alt="<%= recommend[i].name  %> " />
+                                        <h2 class="item__name"><%= recommend[i].name %></h2>
+                                        <p class="item__price">$ <%= String( recommend[i].price) %></p>
+                                </a>
+                                <% } %>
+                        </div> 
                 </main>
                 <script src="/script/navbar.js"></script>
+                <script src="/script/show.js"></script>
         </body>
 </html>

@@ -1,4 +1,5 @@
 import { Router, Response, Request } from "express";
+import { ObjectId } from "mongodb";
 import { getDb } from "../app/db";
 
 import { Product } from "../models/product";
@@ -7,27 +8,43 @@ const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
         return res.render("index.ejs", {
-                page: { title: "MERCI", pageTitle: "", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "MERCI", pageTitle: "", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
         });
 });
 
 router.get("/auth/login", (req: Request, res: Response) => {
         return res.render("login.ejs", {
-                page: { title: "Login Your Merci Account", pageTitle: "Login |", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "Login Your Merci Account", pageTitle: "Login |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
         });
 });
 router.get("/contact", (req: Request, res: Response) => {
         return res.render("contact.ejs", {
-                page: { title: "Contact To MERCI", pageTitle: "Contact Us |", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "Contact To MERCI", pageTitle: "Contact Us |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
         });
 });
-router.get("/show/:id", (req: Request, res: Response) => {
+router.get("/show/:id", async (req: Request, res: Response) => {
+        const db = getDb();
+        const item = ObjectId.isValid(req.params.id) ? await db.collection<Product>("product").findOne({ _id: new ObjectId(req.params.id) }) : null;
+        if (!item) return res.redirect("/404");
+        const recommend = await db
+                .collection<Product>("product")
+                .aggregate([{ $sample: { size: 12 } }])
+                .toArray();
+
         return res.render("show.ejs", {
-                page: { title: "Contact To MERCI", pageTitle: "| Contact", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: {
+                        title: `${item.name}`,
+                        pageTitle: `${item.name} | `,
+                        description: `${item.name} - $${item.price}`,
+                        imageUrl: item.imageUrl,
+                },
                 env: process.env.NODE_ENV,
+                item,
+                url: process.env.CLIENT_URL,
+                recommend,
         });
 });
 
@@ -87,21 +104,22 @@ router.get("/store", async (req: Request, res: Response) => {
                 .toArray();
 
         return res.render("store.ejs", {
-                page: { title: "Explore Merci Store", pageTitle: "Store |", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "Explore Merci Store", pageTitle: "Store |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 data: product,
+                url: process.env.CLIENT_URL,
                 env: process.env.NODE_ENV,
         });
 });
 
 router.get("/checkout", (req: Request, res: Response) => {
         return res.render("checkout.ejs", {
-                page: { title: "Check Out Order", pageTitle: "Checkout |", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "Check Out Order", pageTitle: "Checkout |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
         });
 });
 router.get("/aboutus", (req: Request, res: Response) => {
         return res.render("aboutus.ejs", {
-                page: { title: "Contact To MERCI", pageTitle: "Contact Us |", description: "hello", imageUrl: "/asset/images/banner-2.png" },
+                page: { title: "Contact To MERCI", pageTitle: "About Us |", description: "hello", imageUrl: "/asset/images/aboutus.jpg" },
                 env: process.env.NODE_ENV,
         });
 });

@@ -1,0 +1,95 @@
+@import "../include";
+
+.show {
+        &__wrapper {
+                display: flex;
+                padding: 64px 16px;
+                background-color: #e7e7e7;
+
+                & > * {
+                        flex: 1;
+                }
+                @include BreakPoint(md) {
+                        flex-direction: column;
+
+                        & > *:last-child {
+                                display: none;
+                        }
+                }
+        }
+
+        &__photo {
+                & > img {
+                        width: 100%;
+                        object-fit: contain;
+                        max-height: 400px;
+                }
+        }
+
+        &__info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                & > *:not(:last-child) {
+                        margin-bottom: 32px;
+                }
+        }
+
+        &__title {
+                font-weight: 400;
+                font-size: 36px;
+        }
+
+        &__price {
+                font-size: 36px;
+                font-weight: 300;
+        }
+
+        &__selector {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                max-width: 250px;
+        }
+
+        &__filter {
+                appearance: none;
+                border-radius: 0;
+                font-family: inherit;
+                margin-bottom: 8px;
+                padding: 8px 8px;
+                font-size: 14px;
+                width: 100%;
+
+                outline: none;
+                cursor: pointer;
+                font-weight: 500;
+                color: #171717;
+
+                position: relative;
+
+                border: 1px solid #171717;
+                background: url("/asset/images/dropdown.svg"), #e7e7e7;
+                background-repeat: no-repeat;
+                background-position: 90% center;
+                padding-right: 24px;
+                &::-ms-expand {
+                        display: none;
+                }
+                &:not(:last-child) {
+                        margin-right: 24px;
+                }
+        }
+
+        &__recommend {
+                margin: 16px;
+
+                & > h1 {
+                        font-size: 24px;
+                        font-weight: 400;
+                }
+        }
+}

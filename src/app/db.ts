@@ -12,7 +12,7 @@ export const initDb = () => {
                 const dbInfo = mongodbURI.parse(config.DB_URL);
                 db = result.db("appName");
 
-                logger.info(`Connect to ${dbInfo.database} database successfully on host: ${dbInfo.hosts[0].host}`);
+                console.log(`Connect to ${dbInfo.database} database successfully on host: ${dbInfo.hosts[0].host}`);
         });
 };
 

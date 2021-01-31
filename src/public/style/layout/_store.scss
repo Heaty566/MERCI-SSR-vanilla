@@ -51,7 +51,7 @@
                 }
                 &__box {
                         appearance: none;
-
+                        border-radius: 0;
                         font-family: inherit;
                         margin-bottom: 8px;
                         padding: 8px 8px;
@@ -76,6 +76,10 @@
                                         display: none;
                                 }
                         }
+                }
+                &__btn {
+                        background-color: #163f53;
+                        color: #faf3f3;
                 }
         }
 }

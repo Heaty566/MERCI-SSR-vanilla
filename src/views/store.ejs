@@ -20,7 +20,7 @@
                                         <option value="sortBy=name&sortOrder=1">Name (A -> Z)</option>
                                         <option value="sortBy=name&sortOrder=-1">Name (Z -> A)</option>
                                 </select>
-                                <button class="store__filter__box" type="submit">Search</button>
+                                <button class="store__filter__box store__filter__btn" type="submit">Search</button>
                         </form>
                         <% if (!data.length) {%>
                         <p class="store__notfound">Item Is Not Found</p>
@@ -28,7 +28,7 @@
                         <div class="store__container" id="store">
                                 <% for(var i=0; i<(data.length); i++) {%>
 
-                                <a class="item__wrapper" href="#">
+                                 <a class="item__wrapper" href="<%=url+"/show/"+data[i]._id  %> ">
                                         <div class="item--top">
                                                 <img src="/asset/images/heart.svg" alt="love" />
                                         </div>
@@ -39,11 +39,7 @@
                                 <% } %>
                         </div>
                 </main>
-                <% if (env==="production") { %>
-                <script src="/script/env.prod.js"></script>
-                <% } else { %>
-                <script src="/script/env.dev.js"></script>
-                <% } %>
+                <%- include("./include/script") %>
                 <script src="/script/navbar.js"></script>
                 <script src="/script/store.js"></script>
         </body>

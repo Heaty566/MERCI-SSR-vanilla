@@ -306,6 +306,7 @@ a {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        border-radius: 0;
         font-family: inherit;
         margin-bottom: 8px;
         padding: 8px 8px;
@@ -328,6 +329,11 @@ a {
 
 .store__filter__box__selector::-ms-expand {
         display: none;
+}
+
+.store__filter__btn {
+        background-color: #163f53;
+        color: #faf3f3;
 }
 
 .item__wrapper {
@@ -442,8 +448,11 @@ a {
         display: block;
         resize: none;
         overflow: auto;
+        text-indent: 12px;
         min-height: 300px;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: inherit;
 }
 
 .btn {

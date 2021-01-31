@@ -266,6 +266,28 @@ a {
         }
 }
 
+.form__error {
+        color: red;
+        text-align: left;
+        font-size: 14px;
+        margin-top: 4px;
+}
+
+.form__error::first-letter {
+        text-transform: capitalize;
+}
+
+.form__success {
+        color: #2ecc71;
+        text-align: left;
+        font-size: 14px;
+        margin-top: 4px;
+}
+
+.form__success::first-letter {
+        text-transform: capitalize;
+}
+
 .form__title {
         color: #163f53;
         font-size: 48px;
@@ -315,6 +337,9 @@ a {
         display: block;
         resize: none;
         overflow: auto;
+        text-indent: 12px;
         min-height: 300px;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 14px;
+        font-family: inherit;
 }
