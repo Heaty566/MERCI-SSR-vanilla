@@ -1,27 +1,22 @@
 import express, { Express, json, Request, Response } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import mongodbSession from "connect-mongodb-session";
-import session from "express-session";
-import authController from "../controller/auth.controller";
+import cookieParser from "cookie-parser";
+import authController from "../controller/api.controller";
 import passport from "passport";
-import { config } from "../config";
 import { errorMiddleware } from "../middleware/error.middleware";
 import indexRouter from "../controller/index";
 import morgan from "morgan";
-
-const MongoDbStore = mongodbSession(session);
-const sessionStore = new MongoDbStore({
-        uri: config.DB_URL,
-        collection: "session",
-        expires: config.day * 30,
-});
+import helmet from "helmet";
+import compression from "compression";
 
 export const routers = (app: Express) => {
-        app.use(json());
-        app.use(cors({ origin: config.CLIENT_URL, credentials: true }));
-        app.use(morgan("dev"));
+        app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+        app.use(morgan("tiny"));
         app.use(passport.initialize());
+        app.use(cookieParser());
+        app.use(helmet({ contentSecurityPolicy: false }));
+        app.use(compression());
         app.use(bodyParser.json());
         app.set("view engine", "ejs");
         app.set("views", process.cwd() + "/src/views");
@@ -29,18 +24,6 @@ export const routers = (app: Express) => {
         app.use(bodyParser.urlencoded({ extended: true }));
         //main routers
 
-        app.use(
-                session({
-                        secret: config.SESSION_SECRET,
-                        name: "sessionId",
-                        resave: true,
-                        saveUninitialized: true,
-                        store: sessionStore,
-                        cookie: {
-                                maxAge: config.day * 30,
-                        },
-                })
-        );
         app.use(indexRouter);
         app.use("/api", authController);
         app.use(errorMiddleware);

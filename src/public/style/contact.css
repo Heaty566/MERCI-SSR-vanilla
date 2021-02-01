@@ -1,3 +1,21 @@
+@-webkit-keyframes FadeIn {
+        0% {
+                opacity: 0;
+        }
+        100% {
+                opacity: 1;
+        }
+}
+
+@keyframes FadeIn {
+        0% {
+                opacity: 0;
+        }
+        100% {
+                opacity: 1;
+        }
+}
+
 *,
 *::after,
 *::before {
@@ -75,6 +93,11 @@ a {
         .container__main {
                 padding-top: 48px;
         }
+}
+
+.fade-in {
+        -webkit-animation: FadeIn 0.4s ease-out forwards;
+        animation: FadeIn 0.4s ease-out forwards;
 }
 
 .navbar__container {
@@ -192,10 +215,28 @@ a {
         }
 }
 
+.navbar__bag {
+        position: relative;
+}
+
 @media only screen and (max-width: 768px) {
         .navbar__bag {
                 padding: 4px;
         }
+}
+
+.navbar__count {
+        position: absolute;
+        right: -5px;
+        height: 20px;
+        width: 20px;
+        background-color: #ee4171;
+        color: #ffffff;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 20px;
+        display: none;
+        top: 0;
 }
 
 .navbar__mobile {
@@ -326,6 +367,7 @@ a {
 .form__input {
         display: block;
         width: 100%;
+        border-radius: 0;
         padding: 12px 16px;
         outline: none;
         border: 1px solid #000000;

@@ -1,5 +1,5 @@
 import { Collection, Db, ObjectId } from "mongodb";
-import { User } from "src/models/user";
+import { User } from "../models/user";
 import { logger } from "../app/logging";
 
 export class UserService {

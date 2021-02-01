@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import Joi, { ObjectSchema } from "joi";
-import { JoiErrorMapper } from "../common/validator/messageErrorMapper.joi";
+import { JoiErrorMapper } from "../validator/messageErrorMapper.joi";
 import { ApiError } from "../interfaces/apiError";
 
 export function validator(validatorObject: ObjectSchema) {

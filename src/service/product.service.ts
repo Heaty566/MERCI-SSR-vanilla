@@ -1,4 +1,4 @@
-import { Collection, Db } from "mongodb";
+import { Collection } from "mongodb";
 import { Product } from "src/models/product";
 import { logger } from "../app/logging";
 

@@ -7,7 +7,7 @@
         <body>
                 <%- include("./include/navbar") %>
 
-                <main class="container__main" id="layout">
+                <main class="container__main fade-in" id="layout">
                         <div class="jumbotron">
                                 <img src="/asset/images/jumbotron.jpg" alt="jumbotron" />
                         </div>
@@ -33,7 +33,7 @@
                                                 <img src="/asset/images/heart.svg" alt="love" />
                                         </div>
                                         <img class="item__img" src="<%= data[i].imageUrl  %> " alt="<%= data[i].name  %> " />
-                                        <h2 class="item__name"><%= data[i].name %></h2>
+                                        <h1 class="item__name"><%= data[i].name %></h1>
                                         <p class="item__price">$ <%= String( data[i].price) %></p>
                                 </a>
                                 <% } %>

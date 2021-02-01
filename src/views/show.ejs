@@ -13,12 +13,12 @@
                                 </div>
 
                                 <div class="show__info">
-                                        <h1 class="show__title"><%= item.name %></h1>
-                                        <h2 class="show__price">$ <%= item.price %></h2>
+                                        <h2 class="show__title"><%= item.name %></h2>
+                                        <h3 class="show__price">$ <%= item.price %></h3>
                                         <div class="show__selector">
-                                                <select class="show__filter show__filter__selector">
+                                                <select class="show__filter show__filter__selector" id="size">
                                                         <% for(let i=0; i < item.size.length; i++) { %>
-                                                        <option <%= i===0 ? "selected" :null %>>Size - <%= item.size[i] %> US</option>
+                                                        <option value=<%= item.size[i] %> <%= i===0 ? "selected" :null %>>Size - <%= item.size[i] %> US</option>
 
                                                         <% } %>
                                                 </select>
@@ -29,7 +29,7 @@
                                                         <% } %> 
                                                 </select>
                                         </div>
-                                        <button class="btn">Add To Bag</button>
+                                        <button class="btn" id="add-to-bag" value="<%= item._id  %> ">Add To Bag</button>
                                 </div>
                                 <div class="show__photo">
                                         <img src="<%= item.imageUrl %> " alt="<%= item.name  %> " />
@@ -52,6 +52,7 @@
                                 <% } %>
                         </div> 
                 </main>
+                 <%- include("./include/script") %>
                 <script src="/script/navbar.js"></script>
                 <script src="/script/show.js"></script>
         </body>

@@ -6,7 +6,7 @@
         </head>
         <body>
                 <%- include("./include/navbar") %>
-                <main class="home__layout container__main" id="layout">
+                <main class="home__layout container__main fade-in" id="layout">
                         <div class="home__main--top">
                                 <section class="blog__card">
                                         <h1 class="blog__title">The Stylist Group is a leading digital publisher and media.</h1>
@@ -20,15 +20,26 @@
                         <div class="home__main--bottom"></div>
                         <div class="home__side">
                                 <div class="social__container">
-                                        <a href="https://www.facebook.com/profile.php?id=100007657904974" target="__blank" class="social__item">
+                                        <a
+                                                href="https://www.facebook.com/profile.php?id=100007657904974"
+                                                target="_blank"
+                                                class="social__item"
+                                                rel="noopener"
+                                        >
                                                 <img class="social__icon" src="./asset/images/facebook.svg" alt="facebook" />
                                         </a>
-                                        <a href="https://www.instagram.com/ngocthinhpham0110/?hl=en" target="__blank" class="social__item">
+                                        <a
+                                                href="https://www.instagram.com/ngocthinhpham0110/?hl=en"
+                                                target="_blank"
+                                                class="social__item"
+                                                rel="noopener"
+                                        >
                                                 <img class="social__icon" src="./asset/images/instagram.svg" alt="instagram" />
                                         </a>
                                 </div>
                         </div>
                 </main>
+                <%- include("./include/script") %>
                 <script src="./script/navbar.js"></script>
         </body>
 </html>

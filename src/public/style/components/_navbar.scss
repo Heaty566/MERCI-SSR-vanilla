@@ -86,6 +86,22 @@
                 @include BreakPoint(md) {
                         padding: 4px;
                 }
+                position: relative;
+        }
+
+        &__count {
+                position: absolute;
+                right: -5px;
+                height: 20px;
+                width: 20px;
+                background-color: #ee4171;
+                color: #ffffff;
+                border-radius: 50%;
+                font-size: 14px;
+                line-height: 20px;
+                display: none;
+
+                top: 0;
         }
         &__mobile {
                 width: 40px;

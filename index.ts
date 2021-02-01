@@ -7,18 +7,16 @@ dotenv.config({
 });
 
 import { initDb } from "./src/app/db";
-import { initProd } from "./src/app/prod";
 import { routers } from "./src/app/routes";
 const app = express();
 
 initDb();
-initProd(app);
 routers(app);
 import "./src/service/passport.service";
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-        console.log(`-------------------------------------- Current mode: ${process.env.NODE_ENV}`);
-        console.log(`-------------------------------------- Listening on port ${port}`);
-        console.log("-------------------------------------- database: " + process.env.DB_URL);
+        console.log(`-> Current mode: ${process.env.NODE_ENV}`);
+        console.log(`-> Listening on port ${port}`);
+        console.log("-> database: " + process.env.DB_URL);
 });

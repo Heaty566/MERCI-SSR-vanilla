@@ -5,5 +5,5 @@ export class User {
         name: string;
         googleId: string;
         email: string;
-        cart: [];
+        cart: any[];
 }

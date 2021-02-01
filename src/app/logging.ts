@@ -27,9 +27,9 @@ export const logger = createLogger({
 });
 
 export const exceptionsLogger = (): void => {
-        // process.on("unhandledRejection", (ex) => {
-        //   throw ex;
-        // });
+        process.on("unhandledRejection", (ex) => {
+                throw ex;
+        });
 
         exceptions.handle(
                 new transports.Console({

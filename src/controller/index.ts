@@ -1,7 +1,8 @@
 import { Router, Response, Request } from "express";
 import { ObjectId } from "mongodb";
+import { User } from "../models/user";
 import { getDb } from "../app/db";
-
+import { authMiddleware } from "../middleware/auth.middleware";
 import { Product } from "../models/product";
 
 const router = Router();
@@ -111,9 +112,40 @@ router.get("/store", async (req: Request, res: Response) => {
         });
 });
 
-router.get("/checkout", (req: Request, res: Response) => {
+router.get("/api/count", authMiddleware, async (req: Request, res: Response) => {
+        const user = { ...req.user } as User;
+
+        return res.send({ total: user.cart.length });
+});
+
+router.get("/checkout", authMiddleware, async (req: Request, res: Response) => {
+        const user = { ...req.user } as User;
+
+        const db = getDb().collection("product");
+
+        const item = await Promise.all(
+                user.cart.map(async (item) => {
+                        const product = await db.findOne({ _id: new ObjectId(item.itemId) });
+
+                        return {
+                                name: product.name,
+                                price: product.price,
+                                _id: item.itemId,
+                                color: item.color,
+                                size: item.size,
+                        };
+                })
+        );
+
         return res.render("checkout.ejs", {
                 page: { title: "Check Out Order", pageTitle: "Checkout |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
+                env: process.env.NODE_ENV,
+                item,
+        });
+});
+router.get("/partnership", (req: Request, res: Response) => {
+        return res.render("partner.ejs", {
+                page: { title: "Become MERCI partner", pageTitle: "Partner |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
         });
 });

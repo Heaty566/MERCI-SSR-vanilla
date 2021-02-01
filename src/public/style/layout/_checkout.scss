@@ -1,0 +1,121 @@
+@import "../include";
+
+.checkout {
+        &__container {
+                display: grid;
+                place-items: center;
+        }
+
+        &__wrapper {
+                background-color: #ffffff;
+                padding: 64px;
+                @include BreakPoint(lg) {
+                        width: 100%;
+                        height: 100%;
+                        padding: 64px 16px;
+                }
+        }
+
+        &__table {
+                text-align: left;
+                display: table;
+                width: 700px;
+                border-collapse: collapse;
+                @include BreakPoint(lg) {
+                        width: 100%;
+                }
+
+                & td,
+                th {
+                        padding: 16px 4px;
+                        font-size: 18px;
+
+                        word-wrap: break-word;
+                        min-width: 100px;
+                        @include BreakPoint(lg) {
+                                min-width: auto;
+                                font-size: 14px;
+                        }
+                        text-transform: capitalize;
+                }
+
+                & tr td:not(:first-child),
+                & tr th:not(:first-child) {
+                        text-align: center;
+                }
+
+                & th {
+                        font-size: 20px;
+                        @include BreakPoint(lg) {
+                                font-size: 16px;
+                        }
+                        font-weight: 500;
+                }
+                & caption {
+                        text-align: left;
+                        font-weight: 500;
+                        font-size: 36px;
+                }
+        }
+
+        &__box {
+                &--color {
+                        height: 18px;
+                        width: 18px;
+                        border-radius: 50%;
+                        display: inline-block;
+                }
+        }
+
+        &__delete {
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background-color: transparent;
+        }
+
+        &__total {
+                border-top: 2px solid black;
+                font-weight: 500;
+                font-size: 20px;
+        }
+
+        &__btn {
+                max-width: 120px;
+        }
+
+        &__form {
+                position: fixed;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                display: none;
+                place-items: center;
+                background-color: rgba(97, 103, 124, 0.6);
+
+                &--order {
+                        width: 350px;
+                        text-align: center;
+                        background-color: #ffffff;
+                        position: relative;
+                        padding: 64px 24px;
+
+                        & > *:not(:last-child) {
+                                margin-bottom: 24px;
+                        }
+                }
+        }
+        &__order__quit {
+                cursor: pointer;
+                outline: none;
+                padding: 4px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                border: none;
+                background-color: transparent;
+        }
+}
