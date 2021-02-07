@@ -359,6 +359,7 @@ a {
 
 .form__link__label {
         color: #000000;
+        line-height: 22px;
 }
 
 .form__support a {
