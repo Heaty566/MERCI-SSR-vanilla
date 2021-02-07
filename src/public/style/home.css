@@ -66,6 +66,7 @@ a {
 
 html {
         font-family: "SF Pro";
+        size: 1em;
 }
 
 body {
@@ -132,7 +133,7 @@ a {
 
 .navbar__brand {
         color: #163f53;
-        font-size: 48px;
+        font-size: 3em;
         font-weight: bold;
         font-family: "Times New Roman", Times, serif;
 }
@@ -147,7 +148,7 @@ a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        font-size: 14px;
+        font-size: 0.875em;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -233,7 +234,7 @@ a {
         background-color: #ee4171;
         color: #ffffff;
         border-radius: 50%;
-        font-size: 14px;
+        font-size: 0.875em;
         line-height: 20px;
         display: none;
         top: 0;
@@ -382,17 +383,17 @@ a {
 }
 
 .blog__title {
-        font-size: 24px;
+        font-size: 1.5em;
         letter-spacing: 1px;
 }
 
 .blog__content {
         font-weight: 500;
-        font-size: 13px;
+        font-size: 0.8125em;
 }
 
 .blog__link {
-        font-size: 18px;
+        font-size: 1.125em;
         color: #e8585c;
         font-weight: bold;
         -webkit-transition: 0.2s ease-out;
@@ -416,3 +417,4 @@ a {
 .social__item:not(:last-child) {
         margin-bottom: 16px;
 }
+/*# sourceMappingURL=home.css.map */

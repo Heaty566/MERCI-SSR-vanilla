@@ -1,12 +1,12 @@
 .form {
         &__title {
                 color: #163f53;
-                font-size: 48px;
+                font-size: 3em;
                 font-weight: bold;
                 letter-spacing: 3px;
                 font-family: "Times New Roman", Times, serif;
                 &--sub {
-                        font-size: 17px;
+                        font-size: 1.0625em;
                         color: #61677c;
                 }
         }
@@ -52,7 +52,7 @@
                 text-indent: 12px;
                 min-height: 300px;
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 0.875em;
                 font-family: inherit;
         }
 }

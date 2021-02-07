@@ -6,11 +6,9 @@ navbarBtnMobile.addEventListener("click", function () {
 
 const bagCount = document.getElementById("bag-count");
 
-fetch(env.SERVER_URL + `/count`)
-        .then((data) => data.json())
-        .then((data) => {
-                if (data.total) {
-                        bagCount.innerHTML = data.total;
-                        bagCount.style.display = "block";
-                }
-        });
+axios.get(env.SERVER_URL + `/count`).then(({ data }) => {
+        if (data.total) {
+                bagCount.innerHTML = data.total;
+                bagCount.style.display = "block";
+        }
+});

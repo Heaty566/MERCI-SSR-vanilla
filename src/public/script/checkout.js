@@ -4,9 +4,7 @@ const btnQuit = document.getElementById("info-quit");
 for (let i = 0; i < deleteBtn.length; i++) {
         deleteBtn.item(i).addEventListener("click", function (event) {
                 event.preventDefault();
-                fetch(env.SERVER_URL + `/remove/${this.value}`, {
-                        method: "post",
-                }).finally(() => {
+                axios.post(env.SERVER_URL + `/remove/${this.value}`).finally(() => {
                         window.location.reload();
                 });
         });

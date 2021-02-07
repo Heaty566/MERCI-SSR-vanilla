@@ -23,7 +23,7 @@
 
         &__brand {
                 color: #163f53;
-                font-size: 48px;
+                font-size: 3em;
                 font-weight: bold;
                 font-family: "Times New Roman", Times, serif;
                 @include BreakPoint(md) {
@@ -33,7 +33,7 @@
 
         &__list {
                 display: flex;
-                font-size: 14px;
+                font-size: 0.875em;
                 font-weight: bold;
                 text-transform: uppercase;
                 letter-spacing: 3px;
@@ -97,7 +97,7 @@
                 background-color: #ee4171;
                 color: #ffffff;
                 border-radius: 50%;
-                font-size: 14px;
+                font-size: 0.875em;
                 line-height: 20px;
                 display: none;
 

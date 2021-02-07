@@ -21,7 +21,7 @@
                 }
         }
         &__title {
-                font-size: 96px;
+                font-size: 6em;
                 text-align: center;
                 color: #163f53;
                 letter-spacing: 3px;
@@ -30,7 +30,6 @@
 
         &__img {
                 display: block;
-
                 position: relative;
                 max-width: 550px;
                 & img {

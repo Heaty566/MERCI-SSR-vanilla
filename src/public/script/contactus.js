@@ -19,25 +19,21 @@ form.addEventListener("submit", (event) => {
         const msg = document.getElementById("msg");
         msg.innerHTML = "";
 
-        fetch(env.SERVER_URL + "/comment", {
-                method: "POST",
-                headers: { Accept: "application/json", "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-        })
-                .then((data) => data.json())
-                .then((error) => {
-                        if (error.status === 400) {
-                                Object.keys(error.details).map((item) => {
-                                        const errorMsg = document.getElementById(`${item}:error`);
-                                        errorMsg.innerHTML = item + " " + error.details[item];
-                                });
-                        } else if (error.status === 200) {
-                                const msg = document.getElementById("msg");
-                                msg.innerHTML = "Thank for your feedback, We will contact you later. ";
-                                Object.keys(formData).map((item) => {
-                                        const errorMsg = document.getElementById(`${item}`);
-                                        errorMsg.value = "";
-                                });
-                        }
+        axios.post(env.SERVER_URL + "/comment", { ...formData })
+                .then((data) => {
+                        const msg = document.getElementById("msg");
+                        msg.innerHTML = "Thank for your feedback, We will contact you later. ";
+                        Object.keys(formData).map((item) => {
+                                const errorMsg = document.getElementById(`${item}`);
+                                errorMsg.value = "";
+                        });
+                })
+                .catch((error) => {
+                        const data = error.response.data;
+
+                        Object.keys(data.details).map((item) => {
+                                const errorMsg = document.getElementById(`${item}:error`);
+                                errorMsg.innerHTML = item + " " + data.details[item];
+                        });
                 });
 });

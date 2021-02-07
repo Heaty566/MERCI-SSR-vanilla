@@ -2,9 +2,6 @@
         "name": "kit",
         "version": "1.0.0",
         "main": "index.ts",
-        "engines": {
-                "node": "12.20.1"
-        },
         "scripts": {
                 "start": "NODE_ENV=production  ts-node index.ts",
                 "start:dev": "NODE_ENV=development  nodemon --exec ts-node index.ts ",

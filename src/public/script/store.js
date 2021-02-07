@@ -26,11 +26,9 @@ window.addEventListener("scroll", function (event) {
         if (this.screen.height - this.scrollY < 300 && !callApi) {
                 callApi = !callApi;
 
-                fetch(`${env.SERVER_URL}/more${window.location.search}`)
-                        .then((data) => data.json())
-                        .then((data) => {
-                                const htmlData = data.map((item) => {
-                                        return `<a class="item__wrapper" href="#">
+                axios.get(`${env.SERVER_URL}/more${window.location.search}`).then(({ data }) => {
+                        const htmlData = data.map((item) => {
+                                return `<a class="item__wrapper" href="#">
                                                         <div class="item--top">
                                                                 <img src="/asset/images/heart.svg" alt="love" />
                                                         </div>
@@ -38,9 +36,10 @@ window.addEventListener("scroll", function (event) {
                                                         <h2 class="item__name">${item.name}</h2>
                                                         <p class="item__price">${item.price}</p>
                                                 </a>`;
-                                });
-                                const store = document.getElementById("store");
-                                store.innerHTML += htmlData.join("");
                         });
+
+                        const store = document.getElementById("store");
+                        store.innerHTML += htmlData.join("");
+                });
         }
 });

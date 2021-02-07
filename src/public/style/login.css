@@ -66,6 +66,7 @@ a {
 
 html {
         font-family: "SF Pro";
+        size: 1em;
 }
 
 body {
@@ -132,7 +133,7 @@ a {
 
 .navbar__brand {
         color: #163f53;
-        font-size: 48px;
+        font-size: 3em;
         font-weight: bold;
         font-family: "Times New Roman", Times, serif;
 }
@@ -147,7 +148,7 @@ a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        font-size: 14px;
+        font-size: 0.875em;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -233,7 +234,7 @@ a {
         background-color: #ee4171;
         color: #ffffff;
         border-radius: 50%;
-        font-size: 14px;
+        font-size: 0.875em;
         line-height: 20px;
         display: none;
         top: 0;
@@ -310,7 +311,7 @@ a {
 .form__error {
         color: red;
         text-align: left;
-        font-size: 14px;
+        font-size: 0.875em;
         margin-top: 4px;
 }
 
@@ -321,7 +322,7 @@ a {
 .form__success {
         color: #2ecc71;
         text-align: left;
-        font-size: 14px;
+        font-size: 0.875em;
         margin-top: 4px;
 }
 
@@ -331,14 +332,14 @@ a {
 
 .form__title {
         color: #163f53;
-        font-size: 48px;
+        font-size: 3em;
         font-weight: bold;
         letter-spacing: 3px;
         font-family: "Times New Roman", Times, serif;
 }
 
 .form__title--sub {
-        font-size: 17px;
+        font-size: 1.0625em;
         color: #61677c;
 }
 
@@ -382,6 +383,7 @@ a {
         text-indent: 12px;
         min-height: 300px;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875em;
         font-family: inherit;
 }
+/*# sourceMappingURL=login.css.map */

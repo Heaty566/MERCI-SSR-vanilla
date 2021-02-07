@@ -66,6 +66,7 @@ a {
 
 html {
         font-family: "SF Pro";
+        size: 1em;
 }
 
 body {
@@ -132,7 +133,7 @@ a {
 
 .navbar__brand {
         color: #163f53;
-        font-size: 48px;
+        font-size: 3em;
         font-weight: bold;
         font-family: "Times New Roman", Times, serif;
 }
@@ -147,7 +148,7 @@ a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        font-size: 14px;
+        font-size: 0.875em;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -233,7 +234,7 @@ a {
         background-color: #ee4171;
         color: #ffffff;
         border-radius: 50%;
-        font-size: 14px;
+        font-size: 0.875em;
         line-height: 20px;
         display: none;
         top: 0;
@@ -324,11 +325,11 @@ a {
 
 .show__title {
         font-weight: 400;
-        font-size: 36px;
+        font-size: 2.25em;
 }
 
 .show__price {
-        font-size: 36px;
+        font-size: 2.25em;
         font-weight: 300;
 }
 
@@ -354,7 +355,7 @@ a {
         font-family: inherit;
         margin-bottom: 8px;
         padding: 8px 8px;
-        font-size: 14px;
+        font-size: 0.875em;
         width: 100%;
         outline: none;
         cursor: pointer;
@@ -381,7 +382,7 @@ a {
 }
 
 .show__recommend > h1 {
-        font-size: 24px;
+        font-size: 1.5em;
         font-weight: 400;
 }
 
@@ -442,7 +443,7 @@ a {
 
 .store__notfound {
         border-top: 1px solid #171717;
-        font-size: 32px;
+        font-size: 2em;
         font-weight: 500;
         display: block;
         padding-top: 32px;
@@ -467,7 +468,7 @@ a {
         font-family: inherit;
         margin-bottom: 8px;
         padding: 8px 8px;
-        font-size: 14px;
+        font-size: 0.875em;
         outline: none;
         cursor: pointer;
         font-weight: 500;
@@ -548,17 +549,17 @@ a {
 
 .item__name {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1em;
 }
 
 .item__price {
         font-weight: 300;
-        font-size: 17px;
+        font-size: 1.0625em;
 }
 
 .btn {
         padding: 12px 16px;
-        font-size: 16px;
+        font-size: 1em;
         background: #171717;
         text-align: center;
         color: #fefefe;
@@ -569,3 +570,4 @@ a {
         display: block;
         margin: 0 auto;
 }
+/*# sourceMappingURL=show.css.map */

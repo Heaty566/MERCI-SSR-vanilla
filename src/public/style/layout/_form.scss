@@ -27,7 +27,7 @@
         &__error {
                 color: red;
                 text-align: left;
-                font-size: 14px;
+                font-size: 0.875em;
                 margin-top: 4px;
 
                 &::first-letter {
@@ -37,7 +37,7 @@
         &__success {
                 color: #2ecc71;
                 text-align: left;
-                font-size: 14px;
+                font-size: 0.875em;
                 margin-top: 4px;
 
                 &::first-letter {
