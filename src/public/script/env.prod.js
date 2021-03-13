@@ -1,3 +1,4 @@
 const env = {
-        SERVER_URL: "https://www.heaty566.xyz/api",
+        SERVER_URL: "https://www.mercifashion.site/api",
+        CLIENT_URL: "https://www.mercifashion.site",
 };

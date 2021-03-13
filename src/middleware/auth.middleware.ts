@@ -4,7 +4,7 @@ import { getDb } from "../app/db";
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
         if (!req.cookies["auth"]) {
-                return res.redirect("/auth/login");
+                return res.status(401).redirect("/auth/login");
         }
 
         const db = getDb();
@@ -12,6 +12,6 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
         const user = await userService.findOneByField("_id", req.cookies["auth"]);
         if (user) req.user = user;
-        else return res.cookie("auth", "", { maxAge: -999 }).redirect("/auth/login");
+        else return res.status(401).cookie("auth", "", { maxAge: -999 }).redirect("/auth/login");
         next();
 };

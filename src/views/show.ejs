@@ -17,15 +17,16 @@
                                         <h3 class="show__price">$ <%= item.price %></h3>
                                         <div class="show__selector">
                                                 <select class="show__filter show__filter__selector" id="size">
+                                                      
                                                         <% for(let i=0; i < item.size.length; i++) { %>
-                                                        <option value=<%= item.size[i] %> <%= i===0 ? "selected" :null %>>Size - <%= item.size[i] %> US</option>
+                                                        <option value=<%= item.size[i] %> <%= i===0 ? "selected" :null %>> <%= item.size[i] %> </option>
 
                                                         <% } %>
                                                 </select>
                                                 <select class="show__filter show__filter__selector" id="colorInput">
                                                         <% for(let i=0; i < item.color.length; i++) { %>
                 
-                                                        <option value=<%= item.color[i] %> >Color - <%= item.color[i]  %> </option>
+                                                        <option value=<%= item.color[i] %> <%= i===0 ? "selected" :null %> > <%= item.color[i]  %> </option>
                                                         <% } %> 
                                                 </select>
                                         </div>
@@ -52,6 +53,7 @@
                                 <% } %>
                         </div> 
                 </main>
+                    <%- include("./include/footer") %>
                  <%- include("./include/script") %>
                 <script src="/script/navbar.js"></script>
                 <script src="/script/show.js"></script>

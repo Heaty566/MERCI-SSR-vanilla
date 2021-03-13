@@ -28,13 +28,13 @@ window.addEventListener("scroll", function (event) {
 
                 axios.get(`${env.SERVER_URL}/more${window.location.search}`).then(({ data }) => {
                         const htmlData = data.map((item) => {
-                                return `<a class="item__wrapper" href="#">
+                                return `<a class="item__wrapper" href="${env.CLIENT_URL}/show/${item._id}">
                                                         <div class="item--top">
                                                                 <img src="/asset/images/heart.svg" alt="love" />
                                                         </div>
                                                         <img class="item__img" src="${item.imageUrl} " alt="${item.name} " />
                                                         <h2 class="item__name">${item.name}</h2>
-                                                        <p class="item__price">${item.price}</p>
+                                                        <p class="item__price">$ ${item.price}</p>
                                                 </a>`;
                         });
 

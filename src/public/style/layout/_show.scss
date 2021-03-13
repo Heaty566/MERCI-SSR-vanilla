@@ -39,6 +39,7 @@
 
         &__title {
                 font-weight: 400;
+                text-align: center;
                 font-size: 2.25em;
         }
 
@@ -63,7 +64,7 @@
                 padding: 8px 8px;
                 font-size: 0.875em;
                 width: 100%;
-
+                text-transform: capitalize;
                 outline: none;
                 cursor: pointer;
                 font-weight: 500;

@@ -6,7 +6,6 @@
                 opacity: 1;
         }
 }
-
 @keyframes FadeIn {
         0% {
                 opacity: 0;
@@ -15,7 +14,6 @@
                 opacity: 1;
         }
 }
-
 *,
 *::after,
 *::before {
@@ -24,83 +22,69 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
 }
-
 a {
         text-decoration: none;
 }
-
 @font-face {
         font-family: "SF Pro";
         font-style: normal;
         font-weight: 400;
         src: url("../../asset/fonts/SF-Pro-Display-Regular.otf");
 }
-
 @font-face {
         font-family: "SF Pro";
         font-style: normal;
         font-weight: 500;
         src: url("../../asset/fonts/SF-Pro-Display-Medium.otf");
 }
-
 @font-face {
         font-family: "SF Pro";
         font-style: normal;
         font-weight: 600;
         src: url("../../asset/fonts/SF-Pro-Display-Semibold.otf");
 }
-
 @font-face {
         font-family: "SF Pro";
         font-style: normal;
         font-weight: 300;
         src: url("../../asset/fonts/SF-Pro-Display-Thin.otf");
 }
-
 @font-face {
         font-family: "SF Pro";
         font-style: normal;
         font-weight: 700;
         src: url("../../asset/fonts/SF-Pro-Display-Bold.otf");
 }
-
 html {
         font-family: "SF Pro";
-        size: 1em;
+        size: 16px;
 }
-
 body {
         min-height: 100vh;
         position: relative;
         background-color: #faf3f3;
 }
-
 ul {
         list-style: none;
 }
-
 li,
 a {
         display: block;
         text-decoration: none;
 }
-
 .container__main {
         padding-top: 64px;
         min-height: inherit;
 }
-
 @media only screen and (max-width: 768px) {
         .container__main {
                 padding-top: 48px;
         }
 }
-
 .fade-in {
         -webkit-animation: FadeIn 0.4s ease-out forwards;
         animation: FadeIn 0.4s ease-out forwards;
 }
-
 .navbar__container {
         -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
@@ -109,7 +93,6 @@ a {
         z-index: 999;
         background-color: #faf3f3;
 }
-
 .navbar__wrapper {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -123,27 +106,23 @@ a {
         height: 64px;
         padding: 8px 32px;
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__wrapper {
                 height: 48px;
                 padding: 8px 16px;
         }
 }
-
 .navbar__brand {
         color: #163f53;
         font-size: 3em;
         font-weight: bold;
         font-family: "Times New Roman", Times, serif;
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__brand {
                 font-size: 32px;
         }
 }
-
 .navbar__list {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -158,11 +137,9 @@ a {
         width: 100%;
         background-color: #faf3f3;
 }
-
 .navbar__list > *:not(:last-child) {
         margin-right: 32px;
 }
-
 @media only screen and (max-width: 992px) {
         .navbar__list {
                 position: absolute;
@@ -173,7 +150,6 @@ a {
                 left: 0;
         }
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__list {
                 -webkit-box-orient: vertical;
@@ -197,7 +173,6 @@ a {
                 transform: scaleY(1);
         }
 }
-
 .navbar__link {
         padding: 4px;
         color: #163f53;
@@ -205,27 +180,22 @@ a {
         transition: 0.2s ease-out;
         text-align: center;
 }
-
 .navbar__link:hover {
         background-color: #c9caca;
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__link {
                 padding: 16px;
         }
 }
-
 .navbar__bag {
         position: relative;
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__bag {
                 padding: 4px;
         }
 }
-
 .navbar__count {
         position: absolute;
         right: -5px;
@@ -239,37 +209,31 @@ a {
         display: none;
         top: 0;
 }
-
 .navbar__mobile {
         width: 40px;
         display: none;
         cursor: pointer;
 }
-
 @media only screen and (max-width: 768px) {
         .navbar__mobile {
                 display: block;
         }
 }
-
 .navbar__mobile > * {
         width: inherit;
         height: 4px;
         background-color: #163f53;
 }
-
 .navbar__mobile > *:not(:first-child):not(:last-child) {
         margin: 8px 0;
         width: 60%;
         -webkit-transition: 0.2s ease-out;
         transition: 0.2s ease-out;
 }
-
 .navbar__mobile.active > *:not(:first-child):not(:last-child) {
         -webkit-transform: translateX(65%);
         transform: translateX(65%);
 }
-
 .btn {
         padding: 12px 16px;
         font-size: 1em;
@@ -283,18 +247,15 @@ a {
         display: block;
         margin: 0 auto;
 }
-
 .checkout__container {
         display: -ms-grid;
         display: grid;
         place-items: center;
 }
-
 .checkout__wrapper {
         background-color: #ffffff;
         padding: 64px;
 }
-
 @media only screen and (max-width: 992px) {
         .checkout__wrapper {
                 width: 100%;
@@ -302,20 +263,17 @@ a {
                 padding: 64px 16px;
         }
 }
-
 .checkout__table {
         text-align: left;
         display: table;
         width: 700px;
         border-collapse: collapse;
 }
-
 @media only screen and (max-width: 992px) {
         .checkout__table {
                 width: 100%;
         }
 }
-
 .checkout__table td,
 .checkout__table th {
         padding: 16px 4px;
@@ -324,7 +282,6 @@ a {
         min-width: 100px;
         text-transform: capitalize;
 }
-
 @media only screen and (max-width: 992px) {
         .checkout__table td,
         .checkout__table th {
@@ -332,53 +289,50 @@ a {
                 font-size: 14px;
         }
 }
-
+.checkout__table tr {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 4fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+}
 .checkout__table tr td:not(:first-child),
 .checkout__table tr th:not(:first-child) {
         text-align: center;
 }
-
 .checkout__table th {
         font-size: 1.25em;
         font-weight: 500;
 }
-
 @media only screen and (max-width: 992px) {
         .checkout__table th {
                 font-size: 1em;
         }
 }
-
 .checkout__table caption {
         text-align: left;
         font-weight: 500;
         font-size: 2.25em;
 }
-
 .checkout__box--color {
         height: 18px;
         width: 18px;
         border-radius: 50%;
         display: inline-block;
 }
-
 .checkout__delete {
         border: none;
         outline: none;
         cursor: pointer;
         background-color: transparent;
 }
-
 .checkout__total {
         border-top: 2px solid black;
         font-weight: 500;
         font-size: 1.25em;
 }
-
 .checkout__btn {
         max-width: 120px;
 }
-
 .checkout__form {
         position: fixed;
         z-index: 1000;
@@ -392,7 +346,6 @@ a {
         place-items: center;
         background-color: rgba(97, 103, 124, 0.6);
 }
-
 .checkout__form--order {
         width: 350px;
         text-align: center;
@@ -400,11 +353,9 @@ a {
         position: relative;
         padding: 64px 24px;
 }
-
 .checkout__form--order > *:not(:last-child) {
         margin-bottom: 24px;
 }
-
 .checkout__order__quit {
         cursor: pointer;
         outline: none;
@@ -415,7 +366,6 @@ a {
         border: none;
         background-color: transparent;
 }
-
 .form__title {
         color: #163f53;
         font-size: 3em;
@@ -423,12 +373,10 @@ a {
         letter-spacing: 3px;
         font-family: "Times New Roman", Times, serif;
 }
-
 .form__title--sub {
         font-size: 1.0625em;
         color: #61677c;
 }
-
 .form__link__wrapper {
         border: 1px solid #000000;
         display: -webkit-box;
@@ -438,20 +386,16 @@ a {
         -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
 }
-
 .form__link__img {
         margin-right: 8px;
 }
-
 .form__link__label {
         color: #000000;
         line-height: 22px;
 }
-
 .form__support a {
         color: #000000;
 }
-
 .form__input {
         display: block;
         width: 100%;
@@ -460,7 +404,6 @@ a {
         outline: none;
         border: 1px solid #000000;
 }
-
 .form__textarea {
         padding: 4px;
         width: 100%;
@@ -473,4 +416,11 @@ a {
         font-size: 0.875em;
         font-family: inherit;
 }
-/*# sourceMappingURL=checkout.css.map */
+.footer {
+        padding: 16px 0;
+        font-size: 0.9rem;
+        text-align: center;
+}
+.footer a {
+        display: inline-block;
+}

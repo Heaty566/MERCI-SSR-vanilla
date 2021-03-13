@@ -15,22 +15,22 @@
 .store {
         &__container {
                 display: grid;
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
                 column-gap: 2px;
                 row-gap: 2px;
 
                 @include BreakPoint(xxl) {
-                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 }
                 @include BreakPoint(xl) {
-                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
                 }
 
                 @include BreakPoint(lg) {
-                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-columns: 1fr 1fr 1fr;
                 }
                 @include BreakPoint(md) {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: 1fr 1fr;
                 }
         }
 

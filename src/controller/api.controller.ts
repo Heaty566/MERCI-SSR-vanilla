@@ -9,8 +9,10 @@ import { logger } from "../app/logging";
 import { authMiddleware } from "../middleware/auth.middleware";
 import { ObjectId } from "mongodb";
 import { getDb } from "../app/db";
+import { addCartSchema, AddCart } from "../validator/addCard.validator";
 
 const { getJoiSchemas } = joiSchemaGenerator<ContactUsForm>(contactUsSchema);
+const { getJoiSchemas: getJoiSchemaForCart } = joiSchemaGenerator<AddCart>(addCartSchema);
 const router = Router();
 
 router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
@@ -50,26 +52,35 @@ router.post("/remove/:id", authMiddleware, async (req: Request, res: Response) =
         );
         return res.send({ status: 200 });
 });
-router.post("/add/:id", authMiddleware, async (req: Request, res: Response) => {
-        const id = req.params.id;
-        const db = getDb().collection("user");
-        if (!ObjectId.isValid(id)) return res.status(400).send({ status: 400 });
-        const user = { ...req.user } as User;
+router.post(
+        "/add/:id",
+        authMiddleware,
+        validator(
+                Joi.object({
+                        ...getJoiSchemaForCart(["color", "size"]),
+                })
+        ),
+        async (req: Request, res: Response) => {
+                const id = req.params.id;
+                const db = getDb().collection("user");
+                if (!ObjectId.isValid(id)) return res.status(400).send({ status: 400 });
+                const user = { ...req.user } as User;
 
-        await db.updateOne(
-                { _id: user._id },
-                {
-                        $push: {
-                                cart: {
-                                        itemId: id,
-                                        size: req.body.size,
-                                        color: req.body.color,
+                await db.updateOne(
+                        { _id: user._id },
+                        {
+                                $push: {
+                                        cart: {
+                                                itemId: id,
+                                                size: req.body.size,
+                                                color: req.body.color,
+                                        },
                                 },
-                        },
-                }
-        );
-        return res.send({ status: 200 });
-});
+                        }
+                );
+                return res.send({ status: 200 });
+        }
+);
 router.post(
         "/comment",
         validator(

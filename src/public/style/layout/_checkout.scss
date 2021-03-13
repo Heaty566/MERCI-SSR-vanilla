@@ -38,6 +38,10 @@
                         text-transform: capitalize;
                 }
 
+                & tr {
+                        display: grid;
+                        grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+                }
                 & tr td:not(:first-child),
                 & tr th:not(:first-child) {
                         text-align: center;
