@@ -5,7 +5,6 @@ import { ApiError } from "../interfaces/apiError";
 
 export function validator(validatorObject: ObjectSchema) {
         return (req: Request, res: Response, next: NextFunction) => {
-                console.log(req.body);
                 const { value, error } = validatorObject.validate(req.body, { abortEarly: false });
                 if (error) throw new ApiError("Invalid Input", JoiErrorMapper(error), "BadRequest");
 

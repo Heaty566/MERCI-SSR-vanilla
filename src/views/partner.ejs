@@ -7,7 +7,7 @@
         <body>
                 <%- include("./include/navbar") %>
                 <main class="form__layout container__main fade-in" id="layout">
-                        <form class="form__wrapper" id="contact-form">
+                        <form class="form__wrapper" id="contact-form" method="post" onsubmit="return submitUserForm();">
                                 <h1 class="form__title">MERCI</h1>
                                 <p class="form__title--sub">BECOME MERCI PARTNER</p>
                                 <p class="form__success" id="msg"></p>
@@ -23,10 +23,12 @@
                                         <p class="form__error" id="comment:error"></p>
                                         <textarea class="form__textarea" placeholder="About yourself" id="comment"></textarea>
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6Lejm34aAAAAAMRoR9fkJ5iz0YQokQEOfHyVCOuG" data-callback="verifyCaptcha"></div>
+                                <div id="g-recaptcha-error"></div>
                                 <button class="btn">Submit</button>
                         </form>
                 </main>
-                <%- include("./include/footer") %> <%- include("./include/script") %>
+                <%- include("./include/script") %> <%- include("./include/footer") %>
                 <script src="/script/navbar.js"></script>
                 <script src="/script/contactus.js"></script>
         </body>
