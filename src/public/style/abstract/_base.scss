@@ -80,3 +80,19 @@ a {
 .fade-in {
         animation: FadeIn 0.4s ease-out forwards;
 }
+
+.flex-column {
+        flex-direction: column;
+}
+
+.privacy {
+        max-width: 700px;
+        padding: 16px;
+        & h1 {
+                text-align: center;
+        }
+
+        & > *:not(:last-child) {
+                margin-bottom: 16px;
+        }
+}

@@ -85,6 +85,22 @@ a {
         -webkit-animation: FadeIn 0.4s ease-out forwards;
         animation: FadeIn 0.4s ease-out forwards;
 }
+.flex-column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+}
+.privacy {
+        max-width: 700px;
+        padding: 16px;
+}
+.privacy h1 {
+        text-align: center;
+}
+.privacy > *:not(:last-child) {
+        margin-bottom: 16px;
+}
 .navbar__container {
         -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.16);

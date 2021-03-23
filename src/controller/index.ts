@@ -149,6 +149,12 @@ router.get("/partnership", (req: Request, res: Response) => {
                 env: process.env.NODE_ENV,
         });
 });
+router.get("/disclaimer", (req: Request, res: Response) => {
+        return res.render("disclaimer.ejs", {
+                page: { title: "Become MERCI partner", pageTitle: "Disclaimer |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
+                env: process.env.NODE_ENV,
+        });
+});
 router.get("/aboutus", (req: Request, res: Response) => {
         return res.render("aboutus.ejs", {
                 page: { title: "Contact To MERCI", pageTitle: "About Us |", description: "hello", imageUrl: "/asset/images/aboutus.jpg" },
