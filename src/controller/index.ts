@@ -11,6 +11,8 @@ router.get("/", (req: Request, res: Response) => {
         return res.render("index.ejs", {
                 page: { title: "MERCI", pageTitle: "", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 
@@ -18,12 +20,16 @@ router.get("/auth/login", (req: Request, res: Response) => {
         return res.render("login.ejs", {
                 page: { title: "Login Your Merci Account", pageTitle: "Login |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 router.get("/contact", (req: Request, res: Response) => {
         return res.render("contact.ejs", {
                 page: { title: "Contact To MERCI", pageTitle: "Contact Us |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 router.get("/show/:id", async (req: Request, res: Response) => {
@@ -46,6 +52,7 @@ router.get("/show/:id", async (req: Request, res: Response) => {
                 item,
                 url: process.env.CLIENT_URL,
                 recommend,
+                currentUrl: req.url,
         });
 });
 
@@ -109,6 +116,7 @@ router.get("/store", async (req: Request, res: Response) => {
                 data: product,
                 url: process.env.CLIENT_URL,
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
         });
 });
 
@@ -141,24 +149,32 @@ router.get("/checkout", authMiddleware, async (req: Request, res: Response) => {
                 page: { title: "Check Out Order", pageTitle: "Checkout |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
                 item,
+                url: process.env.CLIENT_URL,
+                currentUrl: req.url,
         });
 });
 router.get("/partnership", (req: Request, res: Response) => {
         return res.render("partner.ejs", {
                 page: { title: "Become MERCI partner", pageTitle: "Partner |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 router.get("/disclaimer", (req: Request, res: Response) => {
         return res.render("disclaimer.ejs", {
                 page: { title: "Become MERCI partner", pageTitle: "Disclaimer |", description: "hello", imageUrl: "/asset/images/banner-2.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 router.get("/aboutus", (req: Request, res: Response) => {
         return res.render("aboutus.ejs", {
                 page: { title: "Contact To MERCI", pageTitle: "About Us |", description: "hello", imageUrl: "/asset/images/aboutus.jpg" },
                 env: process.env.NODE_ENV,
+                currentUrl: req.url,
+                url: process.env.CLIENT_URL,
         });
 });
 
